@@ -9,21 +9,15 @@ $params = array_merge(
 return [
     'id' => 'app-frontend',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
+    'bootstrap' => [],
     'components' => [
-        'user' => [
-            'identityClass' => 'common\models\User',
-            'enableAutoLogin' => true,
+        'assetManager' => [
+            'linkAssets' => true,
         ],
-        'log' => [
-            'traceLevel' => YII_DEBUG ? 3 : 0,
-            'targets' => [
-                [
-                    'class' => 'yii\log\FileTarget',
-                    'levels' => ['error', 'warning'],
-                ],
-            ],
+        'urlManager' => [
+            'showScriptName'  => false,
+            'enablePrettyUrl' => true,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
