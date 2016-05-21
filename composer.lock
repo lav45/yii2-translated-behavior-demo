@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2ddbf49b1892ffe8ab4da682f877b0e0",
-    "content-hash": "36c1f933807cabb1825abe32e7aef2b9",
+    "hash": "b28060e9f37e64268a1a441eb3c9e60a",
+    "content-hash": "3f83e69bf925fd69d1ae341dacb955d9",
     "packages": [
         {
             "name": "bower-asset/anchor-js",
@@ -597,12 +597,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "e42649aafe2bf98e7ee115949c75e06a1df9716e"
+                "reference": "a9da4d6dc7b032989bad90b2e9673d58832c6eb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/e42649aafe2bf98e7ee115949c75e06a1df9716e",
-                "reference": "e42649aafe2bf98e7ee115949c75e06a1df9716e",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/a9da4d6dc7b032989bad90b2e9673d58832c6eb8",
+                "reference": "a9da4d6dc7b032989bad90b2e9673d58832c6eb8",
                 "shasum": ""
             },
             "require": {
@@ -683,7 +683,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-05-20 11:13:42"
+            "time": "2016-05-21 12:32:34"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
