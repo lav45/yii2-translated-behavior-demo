@@ -10,17 +10,39 @@ return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
+    'defaultRoute' => 'post',
+    'homeUrl' => '/admin',
     'bootstrap' => [],
     'components' => [
         'assetManager' => [
             'linkAssets' => true,
         ],
+        'request' => [
+            'baseUrl' => '/admin',
+        ],
         'urlManager' => [
             'showScriptName'  => false,
             'enablePrettyUrl' => true,
         ],
+        'user' => [
+            'identityClass' => 'common\models\User',
+            'enableAutoLogin' => true,
+        ],
         'errorHandler' => [
             'errorAction' => 'site/error',
+        ],
+    ],
+    'as access' => [
+        'class' => 'yii\filters\AccessControl',
+        'rules' => [
+            [
+                'actions' => ['login', 'error'],
+                'allow' => true,
+            ],
+            [
+                'roles' => ['@'],
+                'allow' => true,
+            ],
         ],
     ],
     'params' => $params,

@@ -15,15 +15,28 @@ use yii\web\AssetBundle;
  */
 class AppAsset extends AssetBundle
 {
-    public $basePath = '@webroot';
-    public $baseUrl = '@web';
+    /**
+     * @var string
+     */
+    public $sourcePath = '@frontend/resource';
+    /**
+     * @var array
+     */
     public $css = [
         'css/site.css',
     ];
+    /**
+     * @var array
+     */
     public $js = [
+        'js/main.js'
     ];
+    /**
+     * @var array
+     */
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'frontend\assets\AnchorJSAsset'
     ];
 }

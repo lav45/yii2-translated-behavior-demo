@@ -3,16 +3,15 @@ return [
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [
         'cache' => [
-            'class' => 'yii\caching\MemCache',
+            'class' => 'yii\caching\FileCache',
         ],
         'session' => [
             'class' => 'yii\web\CacheSession'
         ],
-        'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
-            'messageConfig' => [
-                'charset' => 'UTF-8',
-            ],
+        'formatter' => [
+            'timeFormat' => 'H:mm',
+            'dateFormat' => 'dd.MM.yyyy',
+            'datetimeFormat' => 'dd.MM.yyyy H:mm',
         ],
     ],
 ];

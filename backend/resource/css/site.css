@@ -41,7 +41,7 @@ a.asc:after, a.desc:after {
     position: relative;
     top: 1px;
     display: inline-block;
-    font-family: 'Glyphicons Halflings';
+    font-family: 'Glyphicons Halflings', sans-serif;
     font-style: normal;
     font-weight: normal;
     line-height: 1;
@@ -88,4 +88,14 @@ a.desc:after {
     border-left: 3px solid #eed3d7;
     padding: 10px 20px;
     margin: 0 0 15px 0;
+}
+
+.vertical-center {
+    bottom: 15px;
+    position: relative;
+    top: 15px;
+}
+
+.redactor-box {
+    margin-bottom: 0;
 }

@@ -11,6 +11,15 @@ return [
     'basePath' => dirname(__DIR__),
     'bootstrap' => [],
     'controllerNamespace' => 'console\controllers',
-    'components' => [],
+    'components' => [
+        'frontendCache' => [
+            'class' => 'yii\caching\FileCache',
+            'cachePath' => '@frontend/runtime/cache'
+        ],
+        'backendCache' => [
+            'class' => 'yii\caching\FileCache',
+            'cachePath' => '@backend/runtime/cache'
+        ],
+    ],
     'params' => $params,
 ];

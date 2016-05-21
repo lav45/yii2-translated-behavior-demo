@@ -3,11 +3,11 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-use backend\assets\AppAsset;
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
+use backend\assets\AppAsset;
 use common\widgets\Alert;
 
 AppAsset::register($this);
@@ -28,17 +28,29 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => 'My Company',
-        'brandUrl' => Yii::$app->homeUrl,
+        'brandLabel' => 'Backend',
+        'brandUrl' => ['/post/index'],
         'options' => [
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
+        'options' => ['class' => 'navbar-nav navbar-left'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => 'Yii2 Documentation', 'url' => '/'],
         ],
+    ]);
+
+    $menu = Yii::$app->params['menu'];
+    array_push($menu, [
+        'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
+        'url' => ['/site/logout'],
+        'linkOptions' => ['data-method' => 'post']
+    ]);
+
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => $menu,
     ]);
     NavBar::end();
     ?>
@@ -54,8 +66,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
+        <p class="pull-left">&copy; LAV45</p>
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
 </footer>

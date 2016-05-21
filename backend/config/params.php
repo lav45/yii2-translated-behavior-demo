@@ -1,4 +1,10 @@
 <?php
 return [
-    'adminEmail' => 'admin@example.com',
+    /**
+     * Main menu
+     */
+    'menu' => [
+        ['label' => 'Post', 'url' => ['/post/index']],
+        ['label' => 'Language', 'url' => ['/language/index']],
+    ],
 ];
