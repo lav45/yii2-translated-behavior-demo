@@ -73,7 +73,7 @@ class PostController extends Controller
 
     /**
      * Creates a new Post model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
+     * If creation is successful, the browser will be redirected to the 'update' page.
      * @return mixed
      */
     public function actionCreate()
@@ -91,7 +91,7 @@ class PostController extends Controller
 
     /**
      * Updates an existing Post model.
-     * If update is successful, the browser will be redirected to the 'view' page.
+     * If update is successful, the browser will be redirected to the current page.
      * @param integer $id
      * @return mixed
      */
@@ -107,6 +107,23 @@ class PostController extends Controller
                 'langList' => Lang::getList()
             ]);
         }
+    }
+
+    /**
+     * Deletes translate an existing Post model.
+     * If deletion is successful, the browser will be redirected to the 'update' page.
+     * @param integer $id
+     * @return \yii\web\Response
+     * @throws NotFoundHttpException
+     */
+    public function actionDeleteTranslate($id)
+    {
+        $model = $this->findModel($id);
+        if ($model->isTranslated()) {
+            $model->getTranslation()->delete();
+        }
+
+        return $this->redirect(['update', 'id' => $model->id, 'lang_id' => $model->language]);
     }
 
     /**

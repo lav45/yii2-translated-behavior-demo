@@ -51,6 +51,18 @@ $inputTemplate = '<div class="input-group">{input}' . $translate_flag . '</div>'
         <div class="col-sm-offset-2 col-sm-8">
             <?= Html::submitButton($model->isNewRecord ? 'Create' : 'Update', 
                 ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+
+            <?php if($model->isTranslated()): ?>
+                <?= Html::a('<span class="glyphicon glyphicon-trash"></span> Translate',
+                    ['delete-translate', 'id' => $model->id, 'lang_id' => $model->language],
+                    [
+                        'class' => 'btn btn-default',
+                        'title' => 'Delete translate',
+                        'data-confirm' => 'Are you sure you want to delete translate for this item?',
+                        'data-pjax' => '0',
+                    ]
+                ) ?>
+            <?php endif; ?>
         </div>
     </div>
 
