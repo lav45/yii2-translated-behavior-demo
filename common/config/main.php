@@ -4,6 +4,7 @@ return [
     'components' => [
         'cache' => [
             'class' => 'yii\caching\FileCache',
+            'cachePath' => '@frontend/runtime/cache'
         ],
         'session' => [
             'class' => 'yii\web\CacheSession'
