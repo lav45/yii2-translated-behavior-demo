@@ -9,7 +9,7 @@
 namespace common\models;
 
 use Yii;
-use yii\caching\ExpressionDependency;
+use yii\caching\TagDependency;
 
 class Lang extends \lav45\translate\models\Lang
 {
@@ -44,22 +44,15 @@ class Lang extends \lav45\translate\models\Lang
 
     public function invalidateCache()
     {
-        Yii::$app->cache->set(self::$cacheKey, time());
-    }
-
-    public static function getLastUpdate()
-    {
-        return Yii::$app->cache->get(self::$cacheKey);
+        TagDependency::invalidate(Yii::$app->cache, self::$cacheKey);
     }
 
     /**
-     * @return ExpressionDependency
+     * @return TagDependency
      */
     public static function getDependency()
     {
-        return new ExpressionDependency([
-            'expression' => static::class . '::getLastUpdate()',
-        ]);
+        return new TagDependency(['tags' => self::$cacheKey]);
     }
 
     /**
