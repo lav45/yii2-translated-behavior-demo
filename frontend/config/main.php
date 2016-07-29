@@ -24,11 +24,16 @@ return [
             'baseUrl' => '',
         ],
         'urlManager' => [
-            'class' => 'lav45\translate\web\UrlManager',
             'showScriptName' => false,
             'enablePrettyUrl' => true,
+            'ruleConfig' => ['class' => 'lav45\translate\web\UrlRule'],
             'rules' => [
                 '<_lang:'. Lang::PATTERN .'>' => 'site/index',
+                [
+                    'pattern' => '',
+                    'route' => 'site/index',
+                    'class' => 'yii\web\UrlRule',
+                ],
                 '<_lang:'. Lang::PATTERN .'>/<slug:' . Post::SLUG_PATTERN . '>.md' => 'site/view',
                 '<_lang:'. Lang::PATTERN .'>/doc' => 'site/doc',
             ]

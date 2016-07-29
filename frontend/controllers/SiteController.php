@@ -5,8 +5,10 @@ use Yii;
 use yii\db\ActiveQuery;
 use yii\helpers\ArrayHelper;
 use yii\web\Controller;
+use yii\web\Cookie;
 use yii\web\NotFoundHttpException;
 use common\models\Post;
+use common\models\Lang;
 
 /**
  * Site controller
@@ -25,8 +27,22 @@ class SiteController extends Controller
         ];
     }
 
-    public function actionIndex()
+    public function actionIndex($_lang = null)
     {
+        $request = Yii::$app->request;
+        $cookies = $request->cookies;
+        $locales = Lang::getLocaleList(false);
+
+        if($_lang !== null && isset($locales[$_lang])) {
+            Yii::$app->response->cookies->add(new Cookie([
+                'name' => 'language',
+                'value' => $_lang,
+            ]));
+            return $this->goHome();
+        } elseif (isset($cookies['language'])) {
+            Yii::$app->language = ArrayHelper::getValue($locales, $cookies['language']->value);
+        }
+
         return $this->actionView('readme');
     }
 
@@ -46,7 +62,9 @@ class SiteController extends Controller
         $menu = Post::find()
             ->with([
                 'currentTranslate' => function(ActiveQuery $q) {
-                    $q->select(['post_id', 'lang_id', 'title']);
+                    $q
+                        ->select(['post_id', 'lang_id', 'title'])
+                        ->asArray();
                 }
             ])
             ->orderBy(['slug' => SORT_ASC])
