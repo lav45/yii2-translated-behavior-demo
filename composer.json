@@ -9,13 +9,18 @@
         "issues": "https://github.com/LAV45/yii2-translated-behavior/issues?state=open",
         "source": "https://github.com/LAV45/yii2-translated-behavior"
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.5.0",
         "ext-intl": "*",
         "ext-sqlite3": "*",
         "ext-pdo_sqlite": "*",
-        "fxp/composer-asset-plugin": "1.1.*",
         "yiisoft/yii2": "2.0.*",
         "yiisoft/yii2-bootstrap": "2.0.*",
         "lav45/yii2-translated-behavior": "1.4.*",
@@ -29,12 +34,6 @@
     },
     "config": {
         "process-timeout": 1800
-    },
-    "extra": {
-        "asset-installer-paths": {
-            "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
-        }
     },
     "scripts": {
         "post-install-cmd": [
