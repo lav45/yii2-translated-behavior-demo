@@ -279,21 +279,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/LAV45/yii2-translated-behavior.git",
-                "reference": "08a41fcce2d3d6940e57960b3c64cc86b11fe2f6"
+                "reference": "1e6b6618565d437155af36ea801c951c9a5bc79b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LAV45/yii2-translated-behavior/zipball/08a41fcce2d3d6940e57960b3c64cc86b11fe2f6",
-                "reference": "08a41fcce2d3d6940e57960b3c64cc86b11fe2f6",
+                "url": "https://api.github.com/repos/LAV45/yii2-translated-behavior/zipball/1e6b6618565d437155af36ea801c951c9a5bc79b",
+                "reference": "1e6b6618565d437155af36ea801c951c9a5bc79b",
                 "shasum": ""
             },
             "require": {
                 "yiisoft/yii2": "2.0.*"
-            },
-            "require-dev": {
-                "phpunit/dbunit": "1.4.*",
-                "phpunit/phpunit": "4.8.*",
-                "symfony/yaml": "2.8.*"
             },
             "type": "yii2-extension",
             "extra": {
@@ -324,7 +319,7 @@
                 "translated",
                 "yii2"
             ],
-            "time": "2016-07-28 23:42:40"
+            "time": "2016-07-29 21:27:40"
         },
         {
             "name": "vova07/yii2-imperavi-widget",
@@ -394,12 +389,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "427941abddab9d210244e4119b78269a6f2c3dd4"
+                "reference": "ca165cb08e340e483c67f37de711e3698f182a0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/427941abddab9d210244e4119b78269a6f2c3dd4",
-                "reference": "427941abddab9d210244e4119b78269a6f2c3dd4",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ca165cb08e340e483c67f37de711e3698f182a0d",
+                "reference": "ca165cb08e340e483c67f37de711e3698f182a0d",
                 "shasum": ""
             },
             "require": {
@@ -480,7 +475,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2016-07-29 09:02:09"
+            "time": "2016-07-30 12:07:56"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
