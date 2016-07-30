@@ -23,8 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'model' => $model,
             ]) ?>
         </div>
-        <div class="col-sm-2">
-            <div class="btn-group-vertical pull-right">
+        <div class="col-sm-2 text-right">
+            <div class="btn-group-vertical">
                 <?php foreach($langList as $lang_id => $lang_name) {
                     $active = $lang_id == $model->language ? ' active' : '';
                     $color = $model->hasTranslate($lang_id) ? 'info' : 'default';
