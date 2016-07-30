@@ -95,11 +95,6 @@ class m160418_201842_page_data extends Migration
             'description' => $html->saveHTML()
         ];
     }
-
-    protected function fixAnchor()
-    {
-        
-    }
     
     /**
      * @param string $imgPath
