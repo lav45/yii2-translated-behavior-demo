@@ -99,3 +99,7 @@ a.desc:after {
 .redactor-box {
     margin-bottom: 0;
 }
+
+.redactor-editor pre {
+    white-space: pre-wrap;
+}
