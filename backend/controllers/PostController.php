@@ -8,7 +8,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
-use vova07\imperavi\actions\UploadAction;
 
 use common\models\Lang;
 use common\models\Post;
@@ -28,26 +27,7 @@ class PostController extends Controller
                 'class' => VerbFilter::class,
                 'actions' => [
                     'delete' => ['POST'],
-                    'image-upload' => ['POST'],
                 ],
-            ],
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function actions()
-    {
-        return [
-            'image-upload' => [
-                'class' => UploadAction::class,
-                'url' => '/upload/images',
-                'path' => '@upload/images',
-                'uploadOnlyImage' => false,
-                'validatorOptions' => [
-                    'maxSize' => 512000 // 500 Kb
-                ]
             ],
         ];
     }

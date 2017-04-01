@@ -4,10 +4,9 @@
 /* @var $model common\models\Post */
 /* @var $form yii\widgets\ActiveForm */
 
-use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
-use vova07\imperavi\Widget as Redactor;
+use vova07\imperavi\Widget as Imperavi;
 
 $translate_flag = '<span class="input-group-addon"><span class="glyphicon glyphicon-flag"></span></span>';
 $inputTemplate = '<div class="input-group">{input}' . $translate_flag . '</div>';
@@ -33,13 +32,12 @@ $inputTemplate = '<div class="input-group">{input}' . $translate_flag . '</div>'
 
     <?= $form->field($model, 'slug')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'description', ['inputTemplate' => $inputTemplate])->widget(Redactor::class, [
+    <?= $form->field($model, 'description', ['inputTemplate' => $inputTemplate])->widget(Imperavi::class, [
         'settings' => [
             'minHeight' => 200,
             'buttonSource' => true,
             'replaceDivs' => false,
             'toolbarFixed' => false,
-            'imageUpload' => Url::to(['image-upload']),
             'plugins' => [
                 'fontsize',
                 'definedlinks',
