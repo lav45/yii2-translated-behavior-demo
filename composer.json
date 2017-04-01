@@ -41,13 +41,8 @@
             "@install"
         ],
         "install": [
-            "php init --env=prod --overwrite=a",
-            "@clear",
+            "php init --env=prod --overwrite=n",
             "@migrate"
-        ],
-        "clear": [
-            "rm -rf */web/assets/*",
-            "rm -rf */runtime/*"
         ],
         "migrate": [
             "php yii migrate/up all --interactive=0"

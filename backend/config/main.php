@@ -12,7 +12,6 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'defaultRoute' => 'post',
     'homeUrl' => '/admin',
-    'bootstrap' => [],
     'components' => [
         'assetManager' => [
             'linkAssets' => true,
@@ -36,6 +35,7 @@ return [
         'class' => 'yii\filters\AccessControl',
         'rules' => [
             [
+                'controllers' => ['site'],
                 'actions' => ['login', 'error'],
                 'allow' => true,
             ],

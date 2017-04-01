@@ -36,32 +36,40 @@ HTML;
     }
 
     /**
-     * @param string|array|\Closure $prefix
      * @param string $tag
      * @param string $attr
+     * @param string|array|\Closure $prefix
      * @throws InvalidConfigException
      */
-    public function addPrefix($prefix, $tag, $attr)
+    public function addPrefix($tag, $attr, $prefix)
     {
         /** @var \DOMElement $item */
         foreach ($this->getElementsByTagName($tag) as $item) {
             $value = $item->getAttribute($attr);
-            if (!empty($value) && substr($value, 0, 4) !== 'http' && $value[0] !== '#') {
-                if (is_string($prefix)) {
-                    $value = $prefix . $value;
-                } elseif (is_callable($prefix)) {
-                    $value = call_user_func($prefix, $value);
-                } else {
-                    throw new InvalidConfigException('Incorrect configuration $prefix params');
-                }
-                $item->setAttribute($attr, $value);
+            if (empty($value)) {
+                continue;
             }
+            if (substr($value, 0, 4) == 'http') {
+                continue;
+            }
+            if ($value[0] == '#') {
+                continue;
+            }
+
+            if (is_string($prefix)) {
+                $value = $prefix . $value;
+            } elseif (is_callable($prefix)) {
+                $value = call_user_func($prefix, $value);
+            } else {
+                throw new InvalidConfigException('Incorrect configuration $prefix params');
+            }
+            $item->setAttribute($attr, $value);
         }
     }
 
-    public function saveHTML()
+    public function saveHTML(\DOMNode $node = NULL)
     {
-        preg_match('/<body>(.*)<\/body>/s', parent::saveHTML(), $match);
+        preg_match('/<body>(.*)<\/body>/s', parent::saveHTML($node), $match);
         return isset($match[1]) ? $match[1] : null;
     }
 }

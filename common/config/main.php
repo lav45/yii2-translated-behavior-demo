@@ -8,8 +8,7 @@ return [
     ],
     'components' => [
         'cache' => [
-            'class' => 'yii\caching\FileCache',
-            'cachePath' => '@frontend/runtime/cache'
+            'class' => 'yii\caching\MemCache'
         ],
         'session' => [
             'class' => 'yii\web\CacheSession'

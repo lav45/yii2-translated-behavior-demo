@@ -12,8 +12,5 @@ return [
                 PDO::ATTR_PERSISTENT => true
             ]
         ],
-        'mailer' => [
-            'useFileTransport' => true,
-        ],
     ],
 ];

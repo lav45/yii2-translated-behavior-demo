@@ -23,6 +23,7 @@ class m160418_201842_page_data extends Migration
      */
     public $assetManager = [
         'class' => AssetManager::class,
+        'linkAssets' => true,
     ];
 
     public function init()
@@ -54,7 +55,7 @@ class m160418_201842_page_data extends Migration
     {
         preg_match('~guide-?(.*)/(.+)\.md$~', $path, $matches);
 
-        $language = $matches[1] ? $matches[1] : Yii::$app->sourceLanguage;
+        $language = $matches[1] ? : Yii::$app->sourceLanguage;
         $language = Locale::getPrimaryLanguage($language);
 
         $slug = strtolower($matches[2]);
@@ -65,14 +66,14 @@ class m160418_201842_page_data extends Migration
         $html = new HTMLDocument();
         @$html->loadHTML($doc);
 
-        $html->addPrefix("/{lang}/", 'a', 'href');
+        $html->addPrefix('a', 'href', '/{lang}/');
 
         $imgPath = dirname($path) . '/images';
         $imgPath = $this->publishImages($imgPath);
         if ($imgPath) {
-            $html->addPrefix(function ($src) use ($imgPath) {
+            $html->addPrefix('img', 'src', function ($src) use ($imgPath) {
                 return $imgPath . '/' . basename($src);
-            }, 'img', 'src');
+            });
         }
 
         foreach (['h1', 'h2', 'h3', 'h4'] as $tag) {
@@ -98,7 +99,7 @@ class m160418_201842_page_data extends Migration
     
     /**
      * @param string $imgPath
-     * @return string
+     * @return string|bool
      */
     protected function publishImages($imgPath)
     {
