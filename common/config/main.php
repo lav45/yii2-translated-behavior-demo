@@ -1,9 +1,10 @@
 <?php
 return [
-    'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
+    'vendorPath' => $root . '/vendor',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@yii2Docs' => $root . '/../yii2/docs',
     ],
     'components' => [
         'cache' => [

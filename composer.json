@@ -36,13 +36,21 @@
         "process-timeout": 1800
     },
     "scripts": {
-        "post-install-cmd": [
-            "rm -rf yii2-dev && git clone https://github.com/yiisoft/yii2.git --depth=1 yii2-dev"
+        "force_update": [
+            "rm -f common/data/db.sqlite",
+            "@install"
         ],
-        "compile": [
+        "install": [
             "php init --env=prod --overwrite=a",
-            "php yii migrate/up all --interactive=0",
-            "php yii user/create admin admin"
+            "@clear",
+            "@migrate"
+        ],
+        "clear": [
+            "rm -rf */web/assets/*",
+            "rm -rf */runtime/*"
+        ],
+        "migrate": [
+            "php yii migrate/up all --interactive=0"
         ]
     }
 }

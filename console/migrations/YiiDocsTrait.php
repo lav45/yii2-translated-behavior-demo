@@ -16,7 +16,7 @@ trait YiiDocsTrait
     /**
      * @var string Path to documents root
      */
-    public $docPath = '@root/yii2-dev/docs';
+    public $docPath = '@root/../yii2/docs';
 
     /**
      * @return array
