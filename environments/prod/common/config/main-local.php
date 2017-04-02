@@ -7,10 +7,6 @@ return [
             'charset' => 'utf8',
 
             'enableSchemaCache' => true,
-
-            'attributes' => [
-                PDO::ATTR_PERSISTENT => true
-            ]
         ],
     ],
 ];
