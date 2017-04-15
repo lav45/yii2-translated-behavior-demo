@@ -18,5 +18,12 @@ return [
             'dateFormat' => 'dd.MM.yyyy',
             'datetimeFormat' => 'dd.MM.yyyy H:mm',
         ],
+        'mailer' => [
+            'class' => 'yii\swiftmailer\Mailer',
+            'messageConfig' => [
+                'charset' => 'UTF-8',
+                'from' => ['lav45-01@yandex.ru' => 'yii2-translated-behavior.lav45.com'],
+            ],
+        ],
     ],
 ];

@@ -4,9 +4,11 @@ return [
         'db' => [
             'class' => 'yii\db\Connection',
             'dsn' => 'sqlite:@common/data/db.sqlite',
-            'charset' => 'utf8',
-
             'enableSchemaCache' => true,
+            'charset' => 'utf8',
+        ],
+        'mailer' => [
+            'useFileTransport' => true,
         ],
     ],
 ];

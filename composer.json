@@ -22,6 +22,7 @@
         "ext-sqlite3": "*",
         "ext-pdo_sqlite": "*",
         "yiisoft/yii2": "2.0.*",
+        "yiisoft/yii2-swiftmailer": "2.0.*",
         "yiisoft/yii2-bootstrap": "2.0.*",
         "lav45/yii2-translated-behavior": "1.4.*",
         "lav45/yii2-ajax-create": "0.1.*",
