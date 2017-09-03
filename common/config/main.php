@@ -22,7 +22,7 @@ return [
             'class' => 'yii\swiftmailer\Mailer',
             'messageConfig' => [
                 'charset' => 'UTF-8',
-                'from' => ['lav45-01@yandex.ru' => 'yii2-translated-behavior.lav45.com'],
+                'from' => ['noreply@lav45.com' => 'yii2-translated-behavior.lav45.com'],
             ],
         ],
     ],

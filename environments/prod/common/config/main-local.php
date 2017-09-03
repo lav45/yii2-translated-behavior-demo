@@ -14,6 +14,12 @@ return [
                 [
                     'class' => 'yii\log\EmailTarget',
                     'levels' => ['error', 'warning'],
+                    'except' => [
+                        'yii\i18n\PhpMessageSource::loadMessages',
+                        'yii\i18n\PhpMessageSource::loadFallbackMessages',
+                        'yii\web\HttpException:404',
+                        'yii\web\HttpException:400',
+                    ],
                     'message' => [
                         'to' => ['lav451@gmail.com'],
                         'subject' => "Error on yii2-translated-behavior.lav45.com",
