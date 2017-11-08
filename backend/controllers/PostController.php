@@ -6,11 +6,11 @@ use Yii;
 use yii\helpers\Url;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 
 use common\models\Lang;
-use common\models\Post;
+use backend\models\Post;
+use backend\models\PostSearch;
 
 /**
  * PostController implements the CRUD actions for Post model.
@@ -34,19 +34,18 @@ class PostController extends Controller
 
     /**
      * Lists all Post models.
+     * @param bool $advancedSearch
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndex($advancedSearch = false)
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Post::find()
-                ->with([
-                    'currentTranslate',
-                    'hasTranslate',
-                ]),
-        ]);
+        $searchModel = new PostSearch();
+        $searchModel->advancedSearch = !empty($advancedSearch);
+
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }
