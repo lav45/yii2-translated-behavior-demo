@@ -27,7 +27,7 @@
         "lav45/yii2-translated-behavior": "1.4.*",
         "lav45/yii2-ajax-create": "0.1.*",
         "vova07/yii2-imperavi-widget": "dev-master as 1.2.x-@dev",
-        "bower-asset/anchor-js": "^3.1"
+        "bower-asset/anchor-js": "3.*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "2.0.*",
