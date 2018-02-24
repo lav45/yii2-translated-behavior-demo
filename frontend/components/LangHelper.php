@@ -9,11 +9,11 @@
 namespace frontend\components;
 
 use Yii;
-use yii\base\Object;
+use yii\base\BaseObject;
 use yii\helpers\Url;
 use Locale;
 
-class LangHelper extends Object
+class LangHelper extends BaseObject
 {
     /**
      * @var array|\Closure
@@ -41,7 +41,7 @@ class LangHelper extends Object
     }
 
     /**
-     * @return \Generator
+     * @return array
      */
     public function getList()
     {
