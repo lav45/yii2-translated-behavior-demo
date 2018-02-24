@@ -201,16 +201,16 @@
         },
         {
             "name": "ezyang/htmlpurifier",
-            "version": "v4.9.3",
+            "version": "v4.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezyang/htmlpurifier.git",
-                "reference": "95e1bae3182efc0f3422896a3236e991049dac69"
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/95e1bae3182efc0f3422896a3236e991049dac69",
-                "reference": "95e1bae3182efc0f3422896a3236e991049dac69",
+                "url": "https://api.github.com/repos/ezyang/htmlpurifier/zipball/d85d39da4576a6934b72480be6978fb10c860021",
+                "reference": "d85d39da4576a6934b72480be6978fb10c860021",
                 "shasum": ""
             },
             "require": {
@@ -244,7 +244,7 @@
             "keywords": [
                 "html"
             ],
-            "time": "2017-06-03T02:28:16+00:00"
+            "time": "2018-02-23T01:58:20+00:00"
         },
         {
             "name": "lav45/yii2-ajax-create",
@@ -463,12 +463,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "8bf5dac415cbc1af0e0adfc23506cb3745db746a"
+                "reference": "ec1abe0efbc2542b55e4e38a8d5e8631ee4fdb92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/8bf5dac415cbc1af0e0adfc23506cb3745db746a",
-                "reference": "8bf5dac415cbc1af0e0adfc23506cb3745db746a",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/ec1abe0efbc2542b55e4e38a8d5e8631ee4fdb92",
+                "reference": "ec1abe0efbc2542b55e4e38a8d5e8631ee4fdb92",
                 "shasum": ""
             },
             "require": {
@@ -555,7 +555,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2018-02-10T22:48:29+00:00"
+            "time": "2018-02-22T17:06:59+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -563,12 +563,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "30eee2b651453df49773d568713f7c9f9aa88053"
+                "reference": "80f7a1681672257e5a5df33578e5df418336d745"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/30eee2b651453df49773d568713f7c9f9aa88053",
-                "reference": "30eee2b651453df49773d568713f7c9f9aa88053",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/80f7a1681672257e5a5df33578e5df418336d745",
+                "reference": "80f7a1681672257e5a5df33578e5df418336d745",
                 "shasum": ""
             },
             "require": {
@@ -615,7 +615,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2018-02-05T12:12:44+00:00"
+            "time": "2018-02-16T10:42:23+00:00"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -779,12 +779,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "7311e6b0aeaf3eb59084300dd323e2c7dd81596d"
+                "reference": "571da3e5049a41b075813175fd1ea415b4311005"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/7311e6b0aeaf3eb59084300dd323e2c7dd81596d",
-                "reference": "7311e6b0aeaf3eb59084300dd323e2c7dd81596d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/571da3e5049a41b075813175fd1ea415b4311005",
+                "reference": "571da3e5049a41b075813175fd1ea415b4311005",
                 "shasum": ""
             },
             "require": {
@@ -799,7 +799,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "yii\\debug\\": ""
+                    "yii\\debug\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -818,7 +818,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2018-02-07T14:46:34+00:00"
+            "time": "2018-02-22T18:34:00+00:00"
         },
         {
             "name": "yiisoft/yii2-gii",
@@ -826,18 +826,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "eff0d4f859b4dce7947dc9ec74ca963024c3c188"
+                "reference": "67743f6a2d352ab51fd362ea8199b3cbe2c8598e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/eff0d4f859b4dce7947dc9ec74ca963024c3c188",
-                "reference": "eff0d4f859b4dce7947dc9ec74ca963024c3c188",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/67743f6a2d352ab51fd362ea8199b3cbe2c8598e",
+                "reference": "67743f6a2d352ab51fd362ea8199b3cbe2c8598e",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/typeahead.js": "0.10.* | ~0.11.0",
                 "phpspec/php-diff": ">=1.0.2",
-                "yiisoft/yii2": "~2.0.13",
+                "yiisoft/yii2": "~2.0.14",
                 "yiisoft/yii2-bootstrap": "~2.0.0"
             },
             "type": "yii2-extension",
@@ -852,7 +852,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "yii\\gii\\": ""
+                    "yii\\gii\\": "src"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -871,7 +871,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2018-01-23T11:15:52+00:00"
+            "time": "2018-02-23T11:04:39+00:00"
         }
     ],
     "aliases": [
