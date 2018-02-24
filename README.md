@@ -17,8 +17,7 @@ Install
 ~$ cd yii2-translated-behavior-demo
 
 ~$ composer install --prefer-dist --no-interaction --optimize-autoloader --no-dev
-~$ composer run-script install
-
-# Create first user
+~$ php init --env=prod --overwrite=n
+~$ php yii migrate/up all --interactive=0
 ~$ php yii user/create admin admin
 ```
