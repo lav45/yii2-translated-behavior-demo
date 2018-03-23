@@ -9,7 +9,6 @@ use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
-use common\models\Lang;
 use frontend\components\LangHelper;
 
 AppAsset::register($this);
@@ -46,15 +45,13 @@ $gitHubLogo = '<svg height="16" class="octicon" version="1.1" viewBox="0 0 16 16
         ],
     ]);
 
-    $langHelper = new LangHelper([
-        'langs' => Lang::getList(true)
-    ]);
-    
+    $langHelper = new LangHelper();
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => [
             [
-                'label' => $langHelper->langs[$langHelper->currentLang],
+                'label' => $langHelper->getLabel(),
                 'items' => $langHelper->getList(),
             ],
             [

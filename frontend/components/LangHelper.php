@@ -9,11 +9,14 @@
 namespace frontend\components;
 
 use Yii;
-use yii\base\BaseObject;
 use yii\helpers\Url;
-use Locale;
+use common\models\Lang;
 
-class LangHelper extends BaseObject
+/**
+ * Class LangHelper
+ * @package frontend\components
+ */
+class LangHelper
 {
     /**
      * @var array|\Closure
@@ -23,21 +26,44 @@ class LangHelper extends BaseObject
      *      [ru] => RUS
      *  )
      */
-    public $langs;
-
+    private $list = [];
+    /**
+     * @var string property in request params
+     */
     public $langAttribute = '_lang';
+    /**
+     * @var string
+     */
+    private $currentId;
 
-    public $currentLang;
-
-    public function init()
+    public function __construct()
     {
-        parent::init();
-        if (is_callable($this->langs)) {
-            $this->langs = call_user_func($this->langs);
+        $this->list = Lang::getList(true);
+    }
+
+    protected function getCurrentId()
+    {
+        if ($this->currentId !== null) {
+            return $this->currentId;
         }
-        if (empty($this->currentLang)) {
-            $this->currentLang = Locale::getPrimaryLanguage(Yii::$app->language);
+        $locales = Lang::getLocaleList();
+        $locales = array_flip($locales);
+
+        $this->currentId = $locales[Yii::$app->language];
+
+        return $this->currentId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getLabel()
+    {
+        $currentLang = $this->getCurrentId();
+        if (isset($this->list[$currentLang])) {
+            return $this->list[$currentLang];
         }
+        return null;
     }
 
     /**
@@ -46,11 +72,13 @@ class LangHelper extends BaseObject
     public function getList()
     {
         $items = [];
-        foreach((array)$this->langs as $lang_id => $urlName) {
+        $currentLang = $this->getCurrentId();
+        $errorHandler = Yii::$app->getErrorHandler();
+        foreach($this->list as $lang_id => $urlName) {
             $items[] = [
                 'label' => $urlName,
-                'active' => $lang_id == $this->currentLang,
-                'url' => Yii::$app->getErrorHandler()->exception !== null ?
+                'active' => $lang_id == $currentLang,
+                'url' => $errorHandler->exception !== null ?
                     Url::toRoute([Yii::$app->getHomeUrl(), $this->langAttribute => $lang_id]) :
                     Url::current([$this->langAttribute => $lang_id]),
             ];
