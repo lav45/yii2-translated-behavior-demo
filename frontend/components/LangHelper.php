@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: loal
+ * User: LAV45
  * Date: 23.04.15
  * Time: 12:16
  */
@@ -19,14 +19,14 @@ use common\models\Lang;
 class LangHelper
 {
     /**
-     * @var array|\Closure
+     * @var array
      *  example Array
      *  (
      *      [en] => ENG
      *      [ru] => RUS
      *  )
      */
-    private $list = [];
+    private $list;
     /**
      * @var string property in request params
      */
@@ -41,6 +41,9 @@ class LangHelper
         $this->list = Lang::getList(true);
     }
 
+    /**
+     * @return string
+     */
     protected function getCurrentId()
     {
         if ($this->currentId !== null) {
@@ -77,7 +80,7 @@ class LangHelper
         foreach($this->list as $lang_id => $urlName) {
             $items[] = [
                 'label' => $urlName,
-                'active' => $lang_id == $currentLang,
+                'active' => $lang_id === $currentLang,
                 'url' => $errorHandler->exception !== null ?
                     Url::toRoute([Yii::$app->getHomeUrl(), $this->langAttribute => $lang_id]) :
                     Url::current([$this->langAttribute => $lang_id]),
