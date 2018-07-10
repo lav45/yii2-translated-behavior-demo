@@ -55,7 +55,7 @@ class m160418_201842_page_data extends Migration
     {
         preg_match('~guide-?(.*)/(.+)\.md$~', $path, $matches);
 
-        $language = $matches[1] ? : Yii::$app->sourceLanguage;
+        $language = $matches[1] ?: Yii::$app->sourceLanguage;
         $language = Locale::getPrimaryLanguage($language);
 
         $slug = strtolower($matches[2]);
@@ -92,11 +92,11 @@ class m160418_201842_page_data extends Migration
         return [
             'language' => $language,
             'slug' => $slug,
-            'title' => $title->textContent,
+            'title' => $title ? $title->textContent : $slug,
             'description' => $html->saveHTML()
         ];
     }
-    
+
     /**
      * @param string $imgPath
      * @return string|bool

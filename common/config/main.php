@@ -1,4 +1,9 @@
 <?php
+
+use yii\swiftmailer\Mailer;
+use yii\web\CacheSession;
+use yii\caching\MemCache;
+
 return [
     'vendorPath' => $root . '/vendor',
     'aliases' => [
@@ -8,10 +13,10 @@ return [
     ],
     'components' => [
         'cache' => [
-            'class' => 'yii\caching\MemCache'
+            'class' => MemCache::class,
         ],
         'session' => [
-            'class' => 'yii\web\CacheSession'
+            'class' => CacheSession::class
         ],
         'formatter' => [
             'timeFormat' => 'H:mm',
@@ -19,7 +24,7 @@ return [
             'datetimeFormat' => 'dd.MM.yyyy H:mm',
         ],
         'mailer' => [
-            'class' => 'yii\swiftmailer\Mailer',
+            'class' => Mailer::class,
             'messageConfig' => [
                 'charset' => 'UTF-8',
                 'from' => ['noreply@lav45.com' => 'yii2-translated-behavior.lav45.com'],
