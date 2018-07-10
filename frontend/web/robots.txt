@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /admin
+
+Sitemap: https://yii2-translated-behavior.lav45.com/sitemap.xml

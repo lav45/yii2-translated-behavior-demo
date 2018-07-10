@@ -18,6 +18,7 @@ return [
                         'yii\i18n\PhpMessageSource::loadMessages',
                         'yii\i18n\PhpMessageSource::loadFallbackMessages',
                         'yii\web\HttpException:404',
+                        'yii\web\HttpException:403',
                         'yii\web\HttpException:400',
                     ],
                     'message' => [

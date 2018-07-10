@@ -27,9 +27,11 @@
         "lav45/yii2-translated-behavior": "1.4.*",
         "lav45/yii2-ajax-create": "0.1.*",
         "vova07/yii2-imperavi-widget": "dev-master as 1.2.x-@dev",
-        "bower-asset/anchor-js": "3.*"
+        "bower-asset/anchor-js": "3.*",
+        "samdark/sitemap": "2.2.*"
     },
     "require-dev": {
+        "roave/security-advisories": "dev-master",
         "yiisoft/yii2-debug": "2.0.*",
         "yiisoft/yii2-gii": "2.0.*"
     },
@@ -42,11 +44,18 @@
             "@install"
         ],
         "install": [
-            "php init --env=prod --overwrite=n",
-            "@migrate"
+            "@init",
+            "@migrate",
+            "@site-map"
+        ],
+        "init": [
+            "php init --env=prod --overwrite=n"
         ],
         "migrate": [
             "php yii migrate/up all --interactive=0"
+        ],
+        "site-map": [
+            "php yii sitemap/create --interactive=0"
         ]
     }
 }
